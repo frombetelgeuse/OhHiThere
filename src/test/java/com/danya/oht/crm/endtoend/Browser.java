@@ -56,5 +56,6 @@ public class Browser {
     }
 
     public void open(String s) {
+        driver.get("http://localhost:8080/" + s);
     }
 }

@@ -23,12 +23,12 @@ public class WalkingSkeletonStepDefs {
 
     @Then("The client sees \"Create order\" submenu on a page")
     public void the_client_sees_Create_order_submenu_on_a_page() {
-        browser.findElement(By.name("create_order"));
+        browser.findElement(By.name("createorder"));
     }
 
     @Then("The client sees \"Find order\" submenu on a page")
     public void the_client_sees_Find_order_submenu_on_a_page() {
-        browser.findElement(By.name("find_order"));
+        browser.findElement(By.name("findorder"));
     }
 
     @Then("The client sees \"About\" submenu on a page")
