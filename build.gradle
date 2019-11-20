@@ -15,6 +15,7 @@ configurations {
 }
 
 def cucumberVersion ='4.7.4'
+def seleniumVersion = '3.141.59'
 
 repositories {
 	mavenCentral()
@@ -29,13 +30,17 @@ dependencies {
 	runtimeOnly 'com.h2database:h2'
 //	runtimeOnly 'mysql:mysql-connector-java'
 	annotationProcessor 'org.projectlombok:lombok'
-	testImplementation('org.springframework.boot:spring-boot-starter-test') {
-		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
-	}
-	testImplementation 'org.springframework.security:spring-security-test'
-	testImplementation "io.cucumber:cucumber-java"
-	testImplementation "io.cucumber:cucumber-java"
-	testImplementation 'io.cucumber:cucumber-spring'
+	testImplementation('org.springframework.boot:spring-boot-starter-test')
+//	testImplementation 'org.springframework.security:spring-security-test'
+	testImplementation "io.cucumber:cucumber-java:${cucumberVersion}"
+	testImplementation "io.cucumber:cucumber-junit:${cucumberVersion}"
+	testImplementation 'io.cucumber:cucumber-spring:2.1.0'
+//	testCompile("io.github.bonigarcia:webdrivermanager:3.7.1")
+//	testCompile("org.seleniumhq.selenium:selenium-java:${seleniumVersion}")
+	testCompile("org.seleniumhq.selenium:selenium-api:${seleniumVersion}")
+//	testCompile("org.seleniumhq.selenium:selenium-server:${seleniumVersion}")
+//	testCompile("org.seleniumhq.selenium:selenium-remote-driver:${seleniumVersion}")
+	testCompile("org.seleniumhq.selenium:selenium-firefox-driver:${seleniumVersion}")
 }
 
 test {
