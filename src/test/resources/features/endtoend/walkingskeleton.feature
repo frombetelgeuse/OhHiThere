@@ -8,19 +8,27 @@ Feature: Walking Skeleton
 
     Examples:
       | submenu       |
-      | Create order  |
-      | Find order    |
-      | About         |
+      | createorder   |
+      | findorder     |
+      | about         |
 
-  Scenario: Client creates an order
+  Scenario Outline: Client creates an order
     When The client opens the create order page
-    And The client fills fields and sends the form
-    Then The client sees order page
+    And The client fills fields: name "<order_name>". Then sends the form
+    Then The client sees order page with fields: name "<order_name>"
 
-  Scenario: Client finds an existing order
-    Given There is an existing order
-    When The client opens the main page
-    And The client fills search box and clicks (Find order)
-    Then The client sees order page
+    Examples:
+      | order_name  |
+      | Great order |
+
+  Scenario Outline: Client finds an existing order
+    Given There is an existing order with fields: name "<order_name>"
+    When The client opens the search order page
+    And The client fills search box and clicks Find
+    Then The client sees order page with fields: name "<order_name>"
+
+    Examples:
+      | order_name  |
+      | Try to find |
 
 

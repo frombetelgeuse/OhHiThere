@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/pure/pure-min.css">
+    <link rel="stylesheet" href="/css/pure/grids-responsive-min.css">
+    <link rel="stylesheet" href="/css/my.css">
+    <title>OHT Order</title>
+</head>
+<body>
+<p th:text="${order.id}">42</p>
+<p th:text="${order.name}">69</p>
+<div class="header">
+    <div class="home-menu pure-menu pure-menu-horizontal pure-menu-fixed">
+        <a class="pure-menu-heading" href="">OHT</a>
+
+        <ul class="pure-menu-list">
+            <li class="pure-menu-item"><a href="/" class="pure-menu-link" name="homepage">Home</a></li>
+            <li class="pure-menu-item"><a href="/order/create" class="pure-menu-link" name="createorder">Create Order</a></li>
+            <li class="pure-menu-item pure-menu-selected"><a href="/order" class="pure-menu-link" name="findorder">Find Order</a></li>
+            <li class="pure-menu-item"><a href="/about" class="pure-menu-link" name="about">About</a></li>
+        </ul>
+    </div>
+</div>
+<div class="splash-container">
+    <div class="splash">
+        <h1 class="splash-head">Oh Hi There</h1>
+        <p class="splash-subhead">
+            У Тебя все получится <3
+        </p>
+    </div>
+</div>
+<div class="content-wrapper">
+    <div class="content">
+        <h2 class="content-head is-center">Your Order</h2>
+
+        <div class="pure-g">
+            <div class="l-box-lrg pure-u-1 pure-u-md-2-5">
+                    <label for="order_id">Id Of Order</label>
+                    <p name="order_id" id="order_id" type="text" placeholder="Name" th:text="${order.id}"/>
+
+                    <label for="order_name">Name Of Order</label>
+                    <p name="order_name" id="order_name" type="text" placeholder="Name" th:text="${order.name}"/>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer l-box is-center">
+        Made by Daanya
+    </div>
+
+</div>
+</body>
+</html>

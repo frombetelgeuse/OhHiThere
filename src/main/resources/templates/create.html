@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/pure/pure-min.css">
+    <link rel="stylesheet" href="/css/pure/grids-responsive-min.css">
+    <link rel="stylesheet" href="/css/my.css">
+    <title>OHT Create</title>
+</head>
+<body>
+<div class="header">
+    <div class="home-menu pure-menu pure-menu-horizontal pure-menu-fixed">
+        <a class="pure-menu-heading" href="">OHT</a>
+
+        <ul class="pure-menu-list">
+            <li class="pure-menu-item"><a href="/" class="pure-menu-link" name="homepage">Home</a></li>
+            <li class="pure-menu-item pure-menu-selected"><a href="/order/create" class="pure-menu-link" name="createorder">Create Order</a></li>
+            <li class="pure-menu-item"><a href="/order" class="pure-menu-link" name="findorder">Find Order</a></li>
+            <li class="pure-menu-item"><a href="/about" class="pure-menu-link" name="about">About</a></li>
+        </ul>
+    </div>
+</div>
+<div class="splash-container">
+    <div class="splash">
+        <h1 class="splash-head">Oh Hi There</h1>
+        <p class="splash-subhead">
+            У Тебя все получится <3
+        </p>
+    </div>
+</div>
+<div class="content-wrapper">
+    <div class="content">
+        <h2 class="content-head is-center">Create Your Order</h2>
+
+        <div class="pure-g">
+            <div class="l-box-lrg pure-u-1 pure-u-md-2-5">
+                <form class="pure-form pure-form-stacked" action="#" th:action="@{/order/create}" th:object="${order}" method="post">
+                    <fieldset>
+
+                        <label for="order_name">Name Of Order</label>
+                        <input id="order_name" type="text" placeholder="Name" th:field="*{name}">
+
+                        <button name="create_order" type="submit" class="pure-button">Create</button>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="footer l-box is-center">
+        Made by Daanya
+    </div>
+
+</div>
+</body>
+</html>
